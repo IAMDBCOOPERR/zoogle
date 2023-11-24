@@ -1,0 +1,47 @@
+.title {
+ color: black;
+ margin-bottom: 30px;
+ font-size: 50px;
+}
+body {
+ background-color: white;
+}
+
+.search-bar-container {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ height: 100vh;
+}
+
+.search-bar {
+ position: relative;
+ width: 400px;
+ padding: 12px 40px 12px 20px; /* Adjust the padding to accommodate the icon */
+ border: none;
+ border-radius: 10px;
+ font-size: 16px;
+ outline: none;
+ background-color: #eae9e9;
+}
+
+.search-bar::before {
+ content: "\1F50D"; /* Unicode character for the magnifying glass icon */
+ font-size: 20px;
+ position: absolute;
+ left: 12px;
+ top: 50%;
+ transform: translateY(-50%);
+}
+
+.search-button {
+ background-color: black;
+ color: #fff;
+ border: none;
+ border-radius: 10px;
+ padding: 12px 20px;
+ margin-left: 10px;
+ cursor: pointer;
+ font-size: 16px;
+ outline: none;
+}
