@@ -1,8 +1,6 @@
-// pages/index.js
 "use client"
 import React, { useState } from "react"
 import "./home.css" // Import the CSS module
-import { Image } from "next/image"
 const Home = () => {
  const [query, setSearchValue] = useState("")
  const [data, setData] = useState(false)
@@ -87,7 +85,7 @@ const Home = () => {
          flexDirection: "column",
         }}
        >
-        <Image src={da.metadata.url} width={180} height={200}></Image>
+        <img src={da.metadata.url} width={180} height={200}></img>
         <span>{da.metadata.movie}</span>
        </div>
       )
