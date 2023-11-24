@@ -72,7 +72,6 @@ const Home = () => {
      gap: "100px",
      width: "100%",
      boxSizing: "border-box",
-     background: "red",
      flexWrap: "wrap",
      padding: "50px",
     }}
