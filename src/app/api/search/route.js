@@ -1,4 +1,3 @@
-import { response } from "express"
 import { NextRequest, NextResponse } from "next/server"
 import { Pinecone } from "@pinecone-database/pinecone"
 
