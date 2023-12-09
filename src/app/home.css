@@ -15,7 +15,7 @@ html {
  box-sizing: inherit;
 }
 main {
- max-width: 930px;
+ max-width: 800px;
  margin: 0rem auto;
 }
 .news-feed {
@@ -28,7 +28,11 @@ main {
 }
 @media (min-width: 700px) {
  .news-feed {
-  grid-gap: 28px;
+  grid-gap: 10px;
+ }
+ .news-feed img {
+  width: 200px;
+  height: 200px;
  }
 }
 
@@ -60,7 +64,7 @@ main {
 }
 
 .search-button {
- background-color: red;
+ background-color: black;
  color: #fff;
  border: none;
  border-radius: 10px;
