@@ -69,7 +69,7 @@ const Home = () => {
      {console.log(data)}
      {data &&
       data.map((da, i) => {
-       return <img src={da.image_link} width={200} height={200}></img>
+       return <img key={i} src={da.image_link} width={200} height={200}></img>
       })}
     </section>
    </main>
