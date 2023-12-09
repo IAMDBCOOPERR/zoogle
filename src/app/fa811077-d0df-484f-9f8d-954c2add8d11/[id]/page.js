@@ -1,7 +1,7 @@
 "use client"
 import React, { useEffect, useState } from "react"
 import "./src.css"
-export default function hello({ params }) {
+export default function Hello({ params }) {
  const [data, setData] = useState(null)
 
  const getData = async (params) => {
