@@ -3,7 +3,7 @@ import { ulid } from "ulidx"
 import { Pinecone } from "@pinecone-database/pinecone"
 
 export async function POST(request) {
- const { captions } = await request.json()
+ const { captions, movie } = await request.json()
 
  const chunkSize = 99
  const finay_vector_data_of_captions = []
@@ -12,11 +12,14 @@ export async function POST(request) {
   const og_captions = chunk.map((template) => {
    return {
     ...template,
-    caption: template.caption.replace(/,/g, "and") + " from venky movie ",
+    caption:
+     template.caption.replace(/,/g, "and") + `from ${movie} movie templates`,
    }
   })
   const only_captions = og_captions.map((template) => {
-   return template.caption.replace(/,/g, "and") + " from venky movie "
+   return (
+    template.caption.replace(/,/g, "and") + `from ${movie} movie templates`
+   )
   })
   const response = await run("@cf/baai/bge-base-en-v1.5", {
    text: only_captions,

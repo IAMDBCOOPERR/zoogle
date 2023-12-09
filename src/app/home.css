@@ -6,6 +6,31 @@
 body {
  background-color: white;
 }
+html {
+ box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+ box-sizing: inherit;
+}
+main {
+ max-width: 930px;
+ margin: 0rem auto;
+}
+.news-feed {
+ display: grid;
+ grid-template-columns: repeat(3, 1fr);
+ grid-gap: 5px;
+}
+.news-feed img {
+ width: 100%;
+}
+@media (min-width: 700px) {
+ .news-feed {
+  grid-gap: 28px;
+ }
+}
 
 .search-bar-container {
  display: flex;

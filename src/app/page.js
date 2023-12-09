@@ -3,8 +3,9 @@ import React, { useState } from "react"
 import "./home.css" // Import the CSS module
 const Home = () => {
  const [query, setSearchValue] = useState("")
- const [data, setData] = useState(false)
+ const [data, setData] = useState([])
  console.log(data)
+
  const handleSearchSubmit = async (e) => {
   e.preventDefault()
 
@@ -61,36 +62,17 @@ const Home = () => {
      </button>
     </form>
    </div>
-   <div
-    style={{
-     display: "flex",
-     flexDirection: "row",
-     marginTop: "-100px !important",
-     justifyContent: "flex-start",
-     gap: "100px",
-     width: "100%",
-     boxSizing: "border-box",
-     flexWrap: "wrap",
-     padding: "50px",
-    }}
-   >
+   <main>
     {" "}
-    {data &&
-     data.map((da, i) => {
-      return (
-       <div
-        key={i}
-        style={{
-         display: "flex",
-         flexDirection: "column",
-        }}
-       >
-        <img src={da.metadata.url} width={180} height={200}></img>
-        <span>{da.metadata.movie}</span>
-       </div>
-      )
-     })}
-   </div>
+    <section className="news-feed">
+     {" "}
+     {console.log(data)}
+     {data &&
+      data.map((da, i) => {
+       return <img src={da.image_link} width={200} height={200}></img>
+      })}
+    </section>
+   </main>
   </>
  )
 }

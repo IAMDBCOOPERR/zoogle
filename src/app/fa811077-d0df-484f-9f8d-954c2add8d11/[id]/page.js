@@ -43,6 +43,7 @@ export default function hello({ params }) {
 
   const data = {
    captions: captionsData,
+   movie: query,
   }
   console.log(data)
   console.log(JSON.stringify(data))
