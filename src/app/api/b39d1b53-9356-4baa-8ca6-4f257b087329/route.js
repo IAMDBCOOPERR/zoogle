@@ -1,6 +1,5 @@
 import { NextResponse } from "next/server"
 import { v2 as cloudinary } from "cloudinary"
-import { query, response } from "express"
 
 export async function POST(request, params) {
  cloudinary.config({
