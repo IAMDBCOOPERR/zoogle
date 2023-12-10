@@ -40,7 +40,7 @@ const Home = () => {
      justifyContent: "center",
      alignItems: "center",
      width: "100%",
-     height: "60vh",
+     height: "40vh",
      flexDirection: "column",
     }}
    >
@@ -69,7 +69,7 @@ const Home = () => {
      {console.log(data)}
      {data &&
       data.map((da, i) => {
-       return <img key={i} src={da.image_link} width={200} height={200}></img>
+       return <img key={i} src={da.image_link}></img>
       })}
     </section>
    </main>

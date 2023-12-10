@@ -3,11 +3,11 @@ import React, { useEffect, useState } from "react"
 import "./src.css"
 export default function Hello({ params }) {
  const [data, setData] = useState(null)
+ var query = params.id
 
  const getData = async (params) => {
   const apiUrl = `/api/b39d1b53-9356-4baa-8ca6-4f257b087329/`
-  const query = params.id
-  // Perform the GET request using the fetch API
+  console.log(params)
   const res = await fetch(apiUrl, {
    method: "POST",
    headers: {
@@ -17,7 +17,6 @@ export default function Hello({ params }) {
   })
    .then((response) => response.json())
    .then((result) => {
-    console.log(result)
     // Update the state with the data received from the API
     setData(result)
    })
@@ -27,7 +26,6 @@ export default function Hello({ params }) {
    })
  }
  useEffect(() => {
-  // Define the URL for the GET request
   getData(params)
  }, [])
 
@@ -45,8 +43,6 @@ export default function Hello({ params }) {
    captions: captionsData,
    movie: query,
   }
-  console.log(data)
-  console.log(JSON.stringify(data))
   fetch("/api/upload", {
    method: "POST",
    headers: {
@@ -78,7 +74,6 @@ export default function Hello({ params }) {
    >
     {data &&
      data.url.map((url, i) => {
-      console.log(url, i)
       return (
        <>
         {" "}
@@ -107,12 +102,6 @@ export default function Hello({ params }) {
    <button class="btn" onClick={sendData}>
     Save Captions
    </button>
-   <h2>Add New Image</h2>
-   <form action="/addImage" method="post" enctype="multipart/form-data">
-    <input type="file" name="image" accept="image/*" required />
-    <input type="text" name="captions" placeholder="Enter caption" required />
-    <button type="submit">Add Image</button>
-   </form>
   </>
  )
 }

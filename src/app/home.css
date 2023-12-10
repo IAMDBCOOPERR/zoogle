@@ -25,14 +25,12 @@ main {
 }
 .news-feed img {
  width: 100%;
+ aspect-ratio: 1/1.2;
+ height: auto;
 }
 @media (min-width: 700px) {
  .news-feed {
   grid-gap: 10px;
- }
- .news-feed img {
-  width: 200px;
-  height: 200px;
  }
 }
 
@@ -73,4 +71,19 @@ main {
  cursor: pointer;
  font-size: 16px;
  outline: none;
+}
+.form-container {
+ width: 80%;
+ display: flex;
+}
+.search-bar {
+ position: relative;
+ min-width: 0;
+ flex: 1;
+ padding: 12px 40px 12px 20px;
+ border: none;
+ border-radius: 10px;
+ font-size: 16px;
+ outline: none;
+ background-color: #eae9e9;
 }

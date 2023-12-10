@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server"
 import { v2 as cloudinary } from "cloudinary"
-
+//this page is for returning the images
 export async function POST(request, params) {
  cloudinary.config({
   cloud_name: "dd4dsbaxh",
@@ -17,6 +17,5 @@ export async function POST(request, params) {
  const url = resources.map((e) => {
   return e.url
  })
- console.log(url)
  return NextResponse.json({ url, query })
 }
