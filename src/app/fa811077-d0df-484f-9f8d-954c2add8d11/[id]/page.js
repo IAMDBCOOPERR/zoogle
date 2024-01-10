@@ -1,4 +1,5 @@
 "use client"
+//this is for /venky or writing for captions
 import React, { useEffect, useState } from "react"
 import "./src.css"
 export default function Hello({ params }) {

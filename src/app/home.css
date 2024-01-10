@@ -33,7 +33,7 @@ main {
   grid-gap: 10px;
  }
  .form-container {
-  width: 85% !important;
+  width: 90% !important;
   display: flex;
  }
 }

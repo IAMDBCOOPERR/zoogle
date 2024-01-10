@@ -44,7 +44,7 @@ const Home = () => {
      flexDirection: "column",
     }}
    >
-    <h1 className="title">ZOOGLE</h1>
+    <h1 className="title">ZOOGLE - Find images of movies</h1>
 
     <form className="form-container" onSubmit={handleSearchSubmit}>
      <input
@@ -54,7 +54,7 @@ const Home = () => {
       name="query"
       value={query}
       onChange={handleInputChange}
-      placeholder="Search for templates"
+      placeholder="Search for images eg: Venky , train  , Raviteja , Police academy"
      />
 
      <button type="submit" className="search-button">
@@ -62,6 +62,13 @@ const Home = () => {
      </button>
     </form>
    </div>
+   <center style={{ marginBottom: "20px" }}>
+    <h4>
+     Fronted - NextJs and Backend Nodejs + Postgresql( 500 images from two
+     different movies are used) Images are hosted on Cloudinary and stored in
+     Postgresql databse which is hosted on vercel
+    </h4>
+   </center>
    <main>
     {" "}
     <section className="news-feed">
@@ -69,7 +76,13 @@ const Home = () => {
      {console.log(data)}
      {data &&
       data.map((da, i) => {
-       return <img key={i} src={da.image_link}></img>
+       return (
+        <figure>
+         <img key={i} src={da.image_link}></img>
+         <figcaption>Caption : {da.caption}</figcaption>
+         <span>MovieName : Venky</span>
+        </figure>
+       )
       })}
     </section>
    </main>
