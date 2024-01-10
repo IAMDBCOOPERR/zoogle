@@ -3,12 +3,13 @@ import React, { useState } from "react"
 import "./home.css" // Import the CSS module
 const Home = () => {
  const [query, setSearchValue] = useState("")
- const [data, setData] = useState([])
+ const [data, setData] = useState(false)
+ const [loading, setLoadingSate] = useState(false)
  console.log(data)
 
  const handleSearchSubmit = async (e) => {
   e.preventDefault()
-
+  setLoadingSate(true)
   // Make a POST request to the /api/search route with the search value
   try {
    const response = await fetch("/api/search", {
@@ -22,6 +23,7 @@ const Home = () => {
    // Handle the response as needed
    const data = await response.json()
    console.log(data)
+   setLoadingSate(false)
    setData(data)
    console.log("hello from metadata")
   } catch (error) {
@@ -73,6 +75,9 @@ const Home = () => {
     {" "}
     <section className="news-feed">
      {" "}
+     {!data && loading && (
+      <center style={{ fontSize: "25px" }}>Loading...</center>
+     )}
      {console.log(data)}
      {data &&
       data.map((da, i) => {
