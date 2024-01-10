@@ -82,7 +82,7 @@ const Home = () => {
      {data &&
       data.map((da, i) => {
        return (
-        <figure>
+        <figure key={i}>
          <img key={i} src={da.image_link}></img>
          <figcaption>Caption : {da.caption}</figcaption>
          <span>MovieName : Venky</span>
