@@ -38,6 +38,20 @@ const Home = () => {
     <>
       <div
         style={{
+          position: "absolute",
+          top: "2%",
+          right: "0%",
+          margin: "5px",
+          padding: "15px",
+          borderRadius: "5px",
+          background: "black",
+          color: "white",
+        }}
+      >
+        Under development added just two tollywood movies
+      </div>
+      <div
+        style={{
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
