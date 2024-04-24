@@ -47,7 +47,14 @@ const Home = () => {
         }}
       >
         <h1 className="title">ZOOGLE</h1>
-        <center>Find Indian meme templates</center>
+        <center
+          style={{
+            fontSize: "20PX",
+            marginBottom: "20px",
+          }}
+        >
+          Find Indian meme templates
+        </center>
 
         <form className="form-container" onSubmit={handleSearchSubmit}>
           <input
